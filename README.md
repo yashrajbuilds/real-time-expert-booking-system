@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-=======
-# real-time-expert-booking-system
-A full-stack real-time expert session booking system built using React, Node.js, Express, and MongoDB.
->>>>>>> c398ed06c66d6f884cd3686c673c7877bb5a85e4
 # Real-Time Expert Session Booking System
 
 A full-stack web app where users can browse experts, check their available slots, book a session, and track booking status from one place.
 
-This project was built with React, Tailwind CSS, Node.js, Express, and MongoDB. It also uses polling on the frontend so booked slots update automatically without refreshing the page.
+This project was built with React, Tailwind CSS, Node.js, Express, and MongoDB Atlas. It also uses polling on the frontend so booked slots update automatically without refreshing the page.
 
 ## 1. Project Overview
 
@@ -47,7 +42,7 @@ The app also includes a My Bookings page where booking status can be updated fro
 
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 
 ## 4. Folder Structure
@@ -105,7 +100,7 @@ cd backend
 npm install
 ```
 
-Create a `.env` file inside the backend folder and add your MongoDB connection string.
+Create a `.env` file inside the backend folder and add your MongoDB Atlas connection string.
 
 Run the seed script once to load sample experts:
 
@@ -140,7 +135,7 @@ cd frontend
 npm install
 ```
 
-Create a `.env` file inside the frontend folder and add the backend URL.
+Create a `.env` file inside the frontend folder and add the backend URL if you want to override the default.
 
 Start the frontend app:
 
@@ -160,14 +155,21 @@ http://localhost:5173
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/expert-booking
+MONGO_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/expert-booking?retryWrites=true&w=majority&appName=real-time-expert-booking-system
 NODE_ENV=development
+CORS_ORIGIN=*
 ```
 
 ### frontend/.env example
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+For production on Vercel, set:
+
+```env
+VITE_API_BASE_URL=https://real-time-expert-booking-system-655d.onrender.com/api
 ```
 
 ## 9. API Endpoints
