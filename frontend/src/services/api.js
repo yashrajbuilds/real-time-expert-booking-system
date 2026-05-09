@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const defaultApiBaseUrl = import.meta.env.DEV
+  ? 'http://localhost:5000/api'
+  : 'https://real-time-expert-booking-system-655d.onrender.com/api';
+
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || defaultApiBaseUrl).replace(/\/$/, '');
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://real-time-expert-booking-system-655d.onrender.com/api',
+  baseURL: apiBaseUrl,
   headers: {
     'Content-Type': 'application/json'
   },
