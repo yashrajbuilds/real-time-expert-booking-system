@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# real-time-expert-booking-system
+A full-stack real-time expert session booking system built using React, Node.js, Express, and MongoDB.
+>>>>>>> c398ed06c66d6f884cd3686c673c7877bb5a85e4
 # Real-Time Expert Session Booking System
 
 A full-stack web app where users can browse experts, check their available slots, book a session, and track booking status from one place.
